@@ -49,6 +49,25 @@ class WillowSensorFwVersion {
   final int hw;
 }
 
+class WillowSensorMfgData {
+  WillowSensorMfgData(Uint8List data) {
+    final bytes = ByteData.sublistView(data);
+    final flags = bytes.getUint16(0, Endian.little);
+
+    /* Bit 15 = pairing open flag */
+    pairingOpen = flags & (1 << 15) != 0;
+    /* Bit 14 = event flag */
+    event = flags & (1 << 14) != 0;
+    /* Bit 13 is reserved for future use */
+    /* Bits 0..12 = version number */
+    version = flags & ((1 << 13) - 1);
+  }
+
+  late bool event;
+  late bool pairingOpen;
+  late int version;
+}
+
 class WillowSensorCtrlProc {
   static const seek = 0x01;
   static const timesync = 0x02;
