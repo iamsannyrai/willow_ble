@@ -1,6 +1,6 @@
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
-class WillowService {
+abstract class WillowService {
   /// Hub service UUIDs
   static final Uuid hubServiceUuid =
       Uuid.parse("cb8655da-ffe9-46e0-923c-eb4e11eb99b9");
