@@ -12,10 +12,14 @@ class WillowBle {
 
   late WillowHubInteractor hubInteractor;
   late WillowSensorInteractor sensorInteractor;
+  late WillowBLEScanner willowBLEScanner;
+  late WillowBleConnectionManager willowBleConnectionManager;
 
   /// init function initializes hub and sensor interactor
   void init(FlutterReactiveBle ble) {
     hubInteractor = WillowHubInteractor(ble);
     sensorInteractor = WillowSensorInteractor(ble: ble);
+    willowBLEScanner = WillowBLEScanner(ble);
+    willowBleConnectionManager = WillowBleConnectionManager(ble);
   }
 }

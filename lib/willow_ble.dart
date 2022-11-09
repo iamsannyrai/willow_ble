@@ -2,6 +2,8 @@ library willow_ble;
 
 export 'src/willow_ble.dart';
 export 'src/willow_service.dart';
+export 'src/willow_ble_scanner.dart';
+export 'src/willow_ble_connection_manager.dart';
 
 // hub related
 export 'src/hub/willow_hub_characteristic.dart';
