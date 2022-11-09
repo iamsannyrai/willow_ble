@@ -20,4 +20,9 @@ class WillowSensorMeasurement {
     required this.batteryLevel,
     required this.flags,
   });
+
+  @override
+  String toString() {
+    return "{deviceId: $deviceId, timeStamp: $timestamp, illuminance: $illuminance, temperature: $temperature, soilHumidity: $soilHumidity, batteryLevel: $batteryLevel, flags: $flags}";
+  }
 }
